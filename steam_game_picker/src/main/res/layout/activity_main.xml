@@ -1,0 +1,148 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_activity_background">
+
+
+    <LinearLayout
+        android:id="@+id/steamLoginContainer"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        tools:context="com.numan1617.steam_game_picker.activities.MainActivity"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/main_activity_text"
+            android:text="@string/main_activity_enter_steam_community_name"
+            android:layout_marginBottom="@dimen/login_form_enter_name_margin" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:background="@drawable/login_background"
+            android:textColor="@color/login_text"
+            android:lines="1"
+            android:gravity="center"
+            android:id="@+id/steamLoginUsername"
+            android:layout_marginBottom="@dimen/login_form_vertical_margin" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_form_vertical_margin"
+            android:text="@string/main_activity_find_profile"
+            android:id="@+id/steamLoginButton"
+            android:onClick="steamLoginButtonClicked"
+            android:paddingTop="@dimen/login_text_vertical_padding"
+            android:paddingBottom="@dimen/login_text_vertical_padding"
+            android:paddingLeft="@dimen/login_text_horizontal_padding"
+            android:paddingRight="@dimen/login_text_horizontal_padding"
+            android:background="@drawable/btn_positive"
+            android:textColor="@color/login_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/steamProfileContainer"
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:layout_marginBottom="@dimen/profile_confirm_text_vertical_margin"
+            android:id="@+id/steamProfileImage" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="New Text"
+            android:layout_marginTop="@dimen/profile_confirm_text_vertical_margin"
+            android:layout_marginBottom="@dimen/profile_confirm_text_vertical_margin"
+            android:textColor="@color/main_activity_text"
+            android:id="@+id/steamProfileName" />
+
+        <LinearLayout
+            android:id="@+id/memberSinceContainer"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/profile_confirm_text_vertical_margin"
+            android:layout_marginBottom="@dimen/profile_confirm_text_vertical_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_activity_text"
+                android:text="@string/main_activity_member_since"
+                android:layout_marginRight="@dimen/profile_confirm_text_horizontal_margin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_activity_text"
+                android:layout_marginLeft="@dimen/profile_confirm_text_horizontal_margin"
+                android:text="New Text"
+                android:id="@+id/steamProfileMemberSince" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/main_activity_reject_profile"
+                android:onClick="rejectProfileClicked"
+                android:paddingTop="@dimen/login_text_vertical_padding"
+                android:paddingBottom="@dimen/login_text_vertical_padding"
+                android:paddingLeft="@dimen/login_text_horizontal_padding"
+                android:paddingRight="@dimen/login_text_horizontal_padding"
+                android:layout_marginRight="@dimen/button_horizontal_margin"
+                android:layout_marginTop="@dimen/button_vertical_margin"
+                android:background="@drawable/btn_negative"
+                android:textColor="@color/login_text" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/main_activity_confirm_profile"
+                android:onClick="confirmProfileClicked"
+                android:paddingTop="@dimen/login_text_vertical_padding"
+                android:paddingBottom="@dimen/login_text_vertical_padding"
+                android:paddingLeft="@dimen/login_text_horizontal_padding"
+                android:paddingRight="@dimen/login_text_horizontal_padding"
+                android:layout_marginLeft="@dimen/button_horizontal_margin"
+                android:layout_marginTop="@dimen/button_vertical_margin"
+                android:background="@drawable/btn_positive"
+                android:textColor="@color/login_text" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/profileLoadingIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center" />
+
+
+</FrameLayout>

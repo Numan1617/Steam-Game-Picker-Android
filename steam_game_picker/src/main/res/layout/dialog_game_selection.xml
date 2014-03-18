@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_game_selection_title"
+        android:textSize="@dimen/dialog_game_select_title_size"
+        android:textStyle="bold"
+        android:textColor="@color/dialog_game_select_title_text"/>
+
+    <CheckBox
+        android:id="@+id/includePlayed2Weeks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/include_played_2_weeks"
+        android:layout_marginTop="@dimen/dialog_game_select_check_vertical_margin"
+        android:layout_marginBottom="@dimen/dialog_game_select_vertical_margin"
+        android:textColor="@color/dialog_game_select_check_text" />
+
+    <CheckBox
+        android:id="@+id/includePlayedLifetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/include_played_lifetime"
+        android:layout_marginTop="@dimen/dialog_game_select_vertical_margin"
+        android:layout_marginBottom="@dimen/dialog_game_select_check_vertical_margin"
+        android:textColor="@color/dialog_game_select_check_text"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_game_select_vertical_margin"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_negative"
+            android:paddingBottom="@dimen/login_text_vertical_padding"
+            android:paddingLeft="@dimen/login_text_horizontal_padding"
+            android:paddingRight="@dimen/login_text_horizontal_padding"
+            android:paddingTop="@dimen/login_text_vertical_padding"
+            android:text="@string/btn_dialog_game_select_negative"
+            android:textColor="@color/login_text" />
+
+        <Button
+            android:id="@+id/confirmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_positive"
+            android:paddingBottom="@dimen/login_text_vertical_padding"
+            android:paddingLeft="@dimen/login_text_horizontal_padding"
+            android:paddingRight="@dimen/login_text_horizontal_padding"
+            android:paddingTop="@dimen/login_text_vertical_padding"
+            android:text="@string/btn_dialog_game_select_positive"
+            android:textColor="@color/login_text" />
+    </LinearLayout>
+</LinearLayout>

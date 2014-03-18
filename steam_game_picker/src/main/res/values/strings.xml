@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Steam Game Picker</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_activity_enter_steam_community_name">Enter a steam community ID or custom URL identifier</string>
+    <string name="main_activity_confirm_profile">That\'s\nme!</string>
+    <string name="main_activity_reject_profile">That\'s\nnot me!</string>
+    <string name="title_activity_view_games_list">Steam Games List</string>
+    <string name="main_activity_find_profile">Find My Profile</string>
+    <string name="main_activity_member_since">Member Since:</string>
+    <string name="error_connection">There was an error connecting to the server.</string>
+    <string name="error_reading_profile">There was an error reading the profile %s. Please try again later.</string>
+    <string name="error_getting_profile">There was an error finding the profile %s. Please check it is correct.</string>
+    <string name="games_list_games_count"># games:</string>
+    <string name="select_random_game">Random Game</string>
+    <string name="title_activity_random_game_selection">Randomizer of doom!</string>
+    <string name="include_played_2_weeks">Played in last 2 weeks</string>
+    <string name="include_played_lifetime">Played all time</string>
+    <string name="no_steam_games">You have no steam games</string>
+    <string name="btn_dialog_game_select_positive">GO!</string>
+    <string name="btn_dialog_game_select_negative">Cancel</string>
+    <string name="dialog_game_selection_title">Include played?</string>
+
+</resources>

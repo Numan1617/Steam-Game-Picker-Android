@@ -1,0 +1,30 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="login_text_horizontal_padding">12dp</dimen>
+    <dimen name="login_text_vertical_padding">8dp</dimen>
+    <dimen name="login_form_vertical_margin">4dp</dimen>
+    <dimen name="login_form_enter_name_margin">16dp</dimen>
+    <dimen name="button_horizontal_margin">8dp</dimen>
+    <dimen name="button_vertical_margin">8dp</dimen>
+    <dimen name="profile_confirm_text_vertical_margin">4dp</dimen>
+    <dimen name="profile_confirm_text_horizontal_margin">4dp</dimen>
+    <dimen name="activity_view_games_profile_vertical_margin">4dp</dimen>
+    <dimen name="activity_view_games_profile_horizontal_margin">4dp</dimen>
+
+    <dimen name="dialog_game_select_vertical_margin">2dp</dimen>
+    <dimen name="dialog_game_select_check_vertical_margin">8dp</dimen>
+    <dimen name="dialog_game_select_horizontal_margin">4dp</dimen>
+    <dimen name="dialog_game_select_title_size">18sp</dimen>
+
+    <dimen name="activity_random_game_title_vertical_margin">8dp</dimen>
+
+    <dimen name="game_list_row_horizontal_margin">4dp</dimen>
+
+    <dimen name="steam_game_logo_width">92dp</dimen>
+    <dimen name="steam_game_logo_height">35dp</dimen>
+    <dimen name="steam_profile_image_width">92dp</dimen>
+    <dimen name="steam_profile_image_height">92dp</dimen>
+
+</resources>

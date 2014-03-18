@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_background"
+    tools:context="com.numan1617.steam_game_picker.activities.RandomGameSelection">
+
+    <ViewFlipper
+        android:id="@+id/flip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/view1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:textColor="@color/login_text"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/view2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:textColor="@color/login_text"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/view3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:textColor="@color/login_text"
+            android:textSize="28sp" />
+
+    </ViewFlipper>
+
+    <RelativeLayout
+        android:id="@+id/finalSelectedGameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/finalSelectedGameName"
+            android:layout_centerHorizontal="true"
+            android:text="You have been selected to play:"
+            android:textColor="@color/login_text" />
+
+        <TextView
+            android:id="@+id/finalSelectedGameName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/login_text"
+            android:textSize="28sp"
+            android:layout_marginTop="@dimen/activity_random_game_title_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_random_game_title_vertical_margin"/>
+
+        <ImageView
+            android:id="@+id/finalSelectedGameImage"
+            android:layout_width="@dimen/steam_game_logo_width"
+            android:layout_height="@dimen/steam_game_logo_height"
+            android:layout_below="@+id/finalSelectedGameName"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

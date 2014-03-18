@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="login_background_border">#FF82807C</color>
+    <color name="activity_background">#FF4D4B49</color>
+    <color name="main_activity_background">#FF262626</color>
+    <color name="login_text">#FFEDEDED</color>
+    <color name="main_activity_text">#FFB0AEAC</color>
+    <color name="btn_positive_background_normal">#FF007B25</color>
+    <color name="btn_positive_background_pressed">#FF005018</color>
+    <color name="btn_positive_background_disabled">#FF175C2C</color>
+    <color name="btn_negative_background_normal">#FFD62D2D</color>
+    <color name="btn_negative_background_pressed">#FF880F0F</color>
+    <color name="btn_negative_background_disabled">#FFA14141</color>
+
+    <color name="dialog_game_select_check_text">#FFFFFFFF</color>
+    <color name="dialog_game_select_title_text">#FFFFFFFF</color>
+</resources>
