@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<resources>
+    <string name="ga_trackingId"></string>
+    <bool name="ga_autoActivityTracking">true</bool>
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+
+    <string name="com.numan1617.steam_game_picker.activities.MainActivity">Main Activity</string>
+    <string name="com.numan1617.steam_game_picker.activities.RandomGameSelection">Random Game Selector Activity</string>
+    <string name="com.numan1617.steam_game_picker.activities.ViewGamesList">View Games List Activity</string>
+</resources>

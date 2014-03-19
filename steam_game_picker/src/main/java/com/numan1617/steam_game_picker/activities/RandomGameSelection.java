@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.google.analytics.tracking.android.EasyTracker;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.numan1617.steam_game_picker.DatabaseHandler;
 import com.numan1617.steam_game_picker.R;
@@ -163,6 +164,18 @@ public class RandomGameSelection extends Activity {
                     .alpha(1f)
                     .setDuration(crossFadeDuration);
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
     }
 
     class FlipFinishTimerTask extends TimerTask {

@@ -12,13 +12,14 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.analytics.tracking.android.EasyTracker;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.numan1617.steam_game_picker.DatabaseHandler;
-import com.numan1617.steam_game_picker.dialogs.GameSelectionDialog;
 import com.numan1617.steam_game_picker.R;
-import com.numan1617.steam_game_picker.networking.SteamRestClientUsage;
 import com.numan1617.steam_game_picker.adapters.ViewGamesListAdapter;
+import com.numan1617.steam_game_picker.dialogs.GameSelectionDialog;
 import com.numan1617.steam_game_picker.interfaces.SteamRestTaskListener;
+import com.numan1617.steam_game_picker.networking.SteamRestClientUsage;
 import com.numan1617.steam_game_picker.objects.Games;
 import com.numan1617.steam_game_picker.objects.SteamCommunityProfile;
 
@@ -128,5 +129,17 @@ public class ViewGamesList extends Activity implements SteamRestTaskListener {
         Log.v(TAG, "onSaveInstanceState");
 
         outState.putParcelable("steamCommunityProfile", steamCommunityProfile);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
     }
 }

@@ -16,10 +16,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.analytics.tracking.android.EasyTracker;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.numan1617.steam_game_picker.R;
-import com.numan1617.steam_game_picker.networking.SteamCommunityXmlClientUsage;
 import com.numan1617.steam_game_picker.interfaces.SteamCommunityXMLTaskListener;
+import com.numan1617.steam_game_picker.networking.SteamCommunityXmlClientUsage;
 import com.numan1617.steam_game_picker.objects.SteamCommunityProfile;
 
 import org.json.JSONException;
@@ -149,4 +150,17 @@ public class MainActivity extends ActionBarActivity implements SteamCommunityXML
         steamProfileContainer.setVisibility(View.GONE);
         profileContainerShown = false;
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
+    }
+
 }
