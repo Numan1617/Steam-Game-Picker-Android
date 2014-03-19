@@ -16,7 +16,7 @@
 
     <CheckBox
         android:id="@+id/includePlayed2Weeks"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/include_played_2_weeks"
         android:layout_marginTop="@dimen/dialog_game_select_check_vertical_margin"
@@ -25,7 +25,7 @@
 
     <CheckBox
         android:id="@+id/includePlayedLifetime"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/include_played_lifetime"
         android:layout_marginTop="@dimen/dialog_game_select_vertical_margin"
