@@ -31,7 +31,7 @@
             android:parentActivityName=".activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="MainActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.RandomGameSelection"
@@ -40,7 +40,7 @@
             android:parentActivityName=".activities.ViewGamesList" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="ViewGamesList" />
+                android:value=".activities.ViewGamesList" />
         </activity>
     </application>
 
