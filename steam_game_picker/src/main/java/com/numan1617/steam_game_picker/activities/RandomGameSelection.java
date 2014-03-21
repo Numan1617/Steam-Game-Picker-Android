@@ -2,10 +2,10 @@ package com.numan1617.steam_game_picker.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -27,7 +27,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class RandomGameSelection extends Activity {
+public class RandomGameSelection extends ActionBarActivity {
 
     private final String TAG = this.getClass().getSimpleName();
     private final int crossFadeDuration = 800;

@@ -1,8 +1,8 @@
 package com.numan1617.steam_game_picker.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -27,7 +27,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
-public class ViewGamesList extends Activity implements SteamRestTaskListener {
+public class ViewGamesList extends ActionBarActivity implements SteamRestTaskListener {
 
     private final String TAG = this.getClass().getSimpleName();
     private LinearLayout steamProfileContainer;
