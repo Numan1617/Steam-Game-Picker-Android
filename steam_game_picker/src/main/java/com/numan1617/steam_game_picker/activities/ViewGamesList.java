@@ -1,9 +1,13 @@
 package com.numan1617.steam_game_picker.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -141,5 +145,35 @@ public class ViewGamesList extends ActionBarActivity implements SteamRestTaskLis
     public void onStop() {
         super.onStop();
         EasyTracker.getInstance(this).activityStop(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.view_games_list, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_logout:
+                performLogout();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void performLogout() {
+        SharedPreferences settings = getSharedPreferences("loginDetails", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.clear();
+        editor.commit();
+
+        Intent loadMainActivity = new Intent(this, MainActivity.class);
+        loadMainActivity.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        startActivity(loadMainActivity);
     }
 }

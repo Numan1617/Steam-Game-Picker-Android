@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -178,6 +179,16 @@ public class RandomGameSelection extends ActionBarActivity {
         EasyTracker.getInstance(this).activityStop(this);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     class FlipFinishTimerTask extends TimerTask {
         public void run() {
             if (flip.isFlipping()) {
@@ -214,5 +225,4 @@ public class RandomGameSelection extends ActionBarActivity {
             }
         }
     }
-
 }

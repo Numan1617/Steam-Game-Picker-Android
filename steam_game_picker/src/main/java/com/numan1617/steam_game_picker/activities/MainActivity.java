@@ -2,6 +2,7 @@ package com.numan1617.steam_game_picker.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -45,6 +46,8 @@ public class MainActivity extends ActionBarActivity implements SteamCommunityXML
         super.onCreate(savedInstanceState);
         Log.v(TAG, "onCreate");
 
+        checkLogin();
+
         setContentView(R.layout.activity_main);
         profileContainerShown = false;
 
@@ -67,6 +70,20 @@ public class MainActivity extends ActionBarActivity implements SteamCommunityXML
                 return false;
             }
         });
+    }
+
+    private void checkLogin() {
+        SteamCommunityProfile steamCommunityProfile = new SteamCommunityProfile();
+
+        SharedPreferences settings = getSharedPreferences("loginDetails", 0);
+        steamCommunityProfile.setSteam64Id(settings.getString("steam64Id", null));
+        steamCommunityProfile.setAvatarFull(settings.getString("avatarFull", null));
+        steamCommunityProfile.setMemberSince(settings.getString("memberSince", null));
+        steamCommunityProfile.setSteamId(settings.getString("steamId", null));
+
+        if (steamCommunityProfile.getSteamId() != null) {
+            loadViewGamesList(steamCommunityProfile);
+        }
     }
 
     @Override
@@ -124,10 +141,7 @@ public class MainActivity extends ActionBarActivity implements SteamCommunityXML
     }
 
     public void confirmProfileClicked(View v) {
-        Intent loadVideoGamesList = new Intent(this, ViewGamesList.class);
-        loadVideoGamesList.putExtra("steamCommunityProfile", selectedSteamCommunityProfile);
-
-        startActivity(loadVideoGamesList);
+        loadViewGamesList(selectedSteamCommunityProfile);
     }
 
     public void rejectProfileClicked(View v) {
@@ -161,6 +175,26 @@ public class MainActivity extends ActionBarActivity implements SteamCommunityXML
     public void onStop() {
         super.onStop();
         EasyTracker.getInstance(this).activityStop(this);
+    }
+
+    public void loadViewGamesList(SteamCommunityProfile steamCommunityProfile) {
+        saveLoginDetails(steamCommunityProfile);
+
+        Intent loadVideoGamesList = new Intent(this, ViewGamesList.class);
+        loadVideoGamesList.putExtra("steamCommunityProfile", steamCommunityProfile);
+        loadVideoGamesList.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        startActivity(loadVideoGamesList);
+    }
+
+    public void saveLoginDetails(SteamCommunityProfile steamCommunityProfile) {
+        SharedPreferences settings = getSharedPreferences("loginDetails", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("steam64Id", steamCommunityProfile.getSteam64Id());
+        editor.putString("avatarFull", steamCommunityProfile.getAvatarFull());
+        editor.putString("memberSince", steamCommunityProfile.getMemberSince());
+        editor.putString("steamId", steamCommunityProfile.getSteamId());
+        editor.commit();
     }
 
 }
