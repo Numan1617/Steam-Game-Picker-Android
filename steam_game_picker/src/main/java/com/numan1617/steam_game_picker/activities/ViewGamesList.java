@@ -115,20 +115,6 @@ public class ViewGamesList extends ActionBarActivity implements SteamRestTaskLis
     public void randomGameClicked(View view) {
         GameSelectionDialog gameSelectionDialog = new GameSelectionDialog(this);
         gameSelectionDialog.show();
-
-    }
-
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        Log.v(TAG, "onRestoreInstanceState");
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        Log.v(TAG, "onSaveInstanceState");
-
-        outState.putParcelable("steamCommunityProfile", steamCommunityProfile);
     }
 
     @Override
