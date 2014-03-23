@@ -48,6 +48,7 @@ public class ViewGamesList extends ActionBarActivity implements SteamRestTaskLis
     private LinearLayout gameCountContainer;
     private TextView steamGameCount;
     private Button selectRandomGame;
+    private TextView noSteamGames;
 
     @Override
     public void onGetOwnedGamesComplete() {
@@ -70,7 +71,6 @@ public class ViewGamesList extends ActionBarActivity implements SteamRestTaskLis
             gamesListView.setVisibility(View.VISIBLE);
         } else {
             Log.v(TAG, "No steam games");
-            TextView noSteamGames = (TextView) findViewById(R.id.noSteamGames);
             noSteamGames.setVisibility(View.VISIBLE);
         }
 
@@ -96,6 +96,7 @@ public class ViewGamesList extends ActionBarActivity implements SteamRestTaskLis
         gameCountContainer = (LinearLayout) findViewById(R.id.gameCountContainer);
         steamGameCount = (TextView) findViewById(R.id.steamGameCount);
         selectRandomGame = (Button) findViewById(R.id.selectRandomGame);
+        noSteamGames = (TextView) findViewById(R.id.noSteamGames);
 
         databaseHandler = DatabaseHandler.getInstance(getApplicationContext());
 
@@ -108,12 +109,7 @@ public class ViewGamesList extends ActionBarActivity implements SteamRestTaskLis
             steamProfileMemberSince.setText(steamCommunityProfile.getMemberSince());
         }
 
-        try {
-            Log.v(TAG, "Getting user details");
-            new SteamRestClientUsage(getString(R.string.steam_api_key)).getOwnedGames(this, steamCommunityProfile.getSteam64Id(), this);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        getOwnedGames();
     }
 
     public void randomGameClicked(View view) {
@@ -160,6 +156,9 @@ public class ViewGamesList extends ActionBarActivity implements SteamRestTaskLis
             case R.id.action_logout:
                 performLogout();
                 return true;
+            case R.id.action_refresh:
+                getOwnedGames();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -175,5 +174,19 @@ public class ViewGamesList extends ActionBarActivity implements SteamRestTaskLis
         loadMainActivity.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         startActivity(loadMainActivity);
+    }
+
+    public void getOwnedGames() {
+        selectRandomGame.setVisibility(View.GONE);
+        gamesListView.setVisibility(View.GONE);
+        noSteamGames.setVisibility(View.GONE);
+        gamesListProgressBar.setVisibility(View.VISIBLE);
+
+        try {
+            Log.v(TAG, "Getting user details");
+            new SteamRestClientUsage(getString(R.string.steam_api_key)).getOwnedGames(this, steamCommunityProfile.getSteam64Id(), this);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

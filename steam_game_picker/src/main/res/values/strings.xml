@@ -23,5 +23,6 @@
     <string name="btn_dialog_game_select_negative">Cancel</string>
     <string name="dialog_game_selection_title">Include played?</string>
     <string name="logout_button">Logout</string>
+    <string name="refresh_button">Refresh</string>
 
 </resources>
